@@ -18,7 +18,15 @@ class SchoolershipController extends Controller
     public function scholarshipReceivers()
     {
         $response['recivers'] = $this->reciver->all();
-        
+
         return view("pages.scholarshipReceivers")->with($response);
+    }
+
+    public function delete($reciver_id)
+    {
+        $receiver = $this->reciver->find($reciver_id);
+        $receiver->delete();
+
+        return redirect(route('scholarshipRecieverList'));
     }
 }

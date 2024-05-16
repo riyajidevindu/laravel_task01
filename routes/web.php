@@ -13,7 +13,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/sclshipreceivers', [SchoolershipController::class, "scholarshipReceivers"])->name("scholarshipRecieverList");
+Route::prefix('/sclshipreceivers')->group(function(){
+    Route::get('/', [SchoolershipController::class, "scholarshipReceivers"])->name("scholarshipRecieverList");
+    Route::get('/{receiver_id}/delete',[SchoolershipController::class, "delete"])->name("scholarshipReciever.delete");
+});
+
 
 
 
