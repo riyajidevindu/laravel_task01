@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ScholershipReciever extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'reciever_name',
+        'donor_name',
+        'monthly_payment',
+        'still_recieving',
+    ];
 }

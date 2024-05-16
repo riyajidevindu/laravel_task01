@@ -11,10 +11,11 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100 ">
                     <div class="max-w-md mx-auto bg-white shadow-md rounded px-8 py-6">
                         <h2 class="text-xl font-semibold mb-4  text-gray-800">Scholarship Application Form</h2>
-                        <form>
+                        <form action="{{ route('addReceiver.store') }}" method="post" enctype="multipart/form">
+                            @csrf
                             <div class="mb-4">
                                 <label for="receiver_name" class="block text-gray-700 text-sm font-bold mb-2">Receiver Name:</label>
-                                <input type="text" id="receiver_name" name="receiver_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter receiver's name">
+                                <input type="text" id="receiver_name" name="reciever_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter receiver's name">
                             </div>
                             <div class="mb-4">
                                 <label for="donor_name" class="block text-gray-700 text-sm font-bold mb-2">Donor Name:</label>
@@ -30,7 +31,7 @@
                                 </select>
                             </div>
                             <div class="mb-4">
-                                <input type="checkbox" id="current_scholarship" name="current_scholarship" class="form-checkbox text-blue-500 h-5 w-5">
+                                <input type="checkbox" id="current_scholarship" name="still_recieving" class="form-checkbox text-blue-500 h-5 w-5">
                                 <label for="current_scholarship" class="ml-2 text-gray-700">Currently receiving scholarship</label>
                             </div>
                             <div class="flex items-center justify-between">

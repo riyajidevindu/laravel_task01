@@ -15,7 +15,12 @@ Route::get('/dashboard', function () {
 
 Route::get('/sclshipreceivers', [SchoolershipController::class, "scholarshipReceivers"])->name("scholarshipRecieverList");
 
-Route::get('/addreceiver',[AddReceiverController::class, "addScholarshipReceiver"])->name("addReceiver");
+
+
+Route::prefix('/addreceiver')->group(function(){
+    Route::get('/',[AddReceiverController::class, "addScholarshipReceiver"])->name("addReceiver");
+    Route::post('/store',[AddReceiverController::class, "store"])->name("addReceiver.store");
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
