@@ -15,7 +15,10 @@ Route::get('/dashboard', function () {
 
 Route::prefix('/sclshipreceivers')->group(function(){
     Route::get('/', [SchoolershipController::class, "scholarshipReceivers"])->name("scholarshipRecieverList");
+    Route::get('/edit/{receiver_id}', [SchoolershipController::class, "edit"])->name("scholarshipReciever.edit");
     Route::get('/{receiver_id}/delete',[SchoolershipController::class, "delete"])->name("scholarshipReciever.delete");
+    Route::post('/update',[SchoolershipController::class, "update"])->name("updateReceiver.store");
+
 });
 
 
