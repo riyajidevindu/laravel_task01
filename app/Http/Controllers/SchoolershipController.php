@@ -17,10 +17,11 @@ class SchoolershipController extends Controller
 
     public function scholarshipReceivers()
     {
-        $response['recivers'] = $this->reciver->all();
+        $response['recivers'] = $this->reciver->with('donor')->get();
 
         return view("pages.scholarshipReceivers")->with($response);
     }
+
 
 
     public function delete($reciver_id)

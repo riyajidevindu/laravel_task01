@@ -27,7 +27,7 @@
                                 <tr>
                                     <td class="border px-6 py-4">{{ $reciver->id+1000 }}</td>
                                     <td class="border px-6 py-4">{{ $reciver->reciever_name }}</td>
-                                    <td class="border px-6 py-4">{{ $reciver->donor_name }}</td>
+                                    <td class="border px-6 py-4">{{ $reciver->donor->name }}</td>
                                     <td class="border px-6 py-4">{{ $reciver->monthly_payment }}</td>
                                     <td class="border px-6 py-4">{{ $reciver->still_recieving ? 'Yes' : 'No' }}</td>
                                     <td class="border px-6 py-4">
