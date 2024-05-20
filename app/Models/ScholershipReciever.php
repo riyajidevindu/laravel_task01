@@ -14,5 +14,11 @@ class ScholershipReciever extends Model
         'donor_name',
         'monthly_payment',
         'still_recieving',
+        'donor_id'
     ];
+
+    public function donor()
+    {
+        return $this->belongsTo(Donor::class);
+    }
 }
