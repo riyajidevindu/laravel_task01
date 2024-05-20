@@ -24,8 +24,14 @@
                             </div>
 
                             <div class="mb-4">
-                                <label for="donor_name" class="block text-gray-700 text-sm font-bold mb-2">Donor Name:</label>
-                                <input type="text" value="{{ $receiver->donor_name }}" id="donor_name" name="donor_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter donor's name">
+                                <label for="donor_id" class="block text-gray-700 text-sm font-bold mb-2">Donor Name:</label>
+                                <select id="donor_id" name="donor_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    @foreach($donors as $donor)
+                                        <option value="{{ $donor->id }}" {{ $receiver->donor_id == $donor->id ? 'selected' : '' }}>
+                                            {{ $donor->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="mb-4">
@@ -43,8 +49,6 @@
                                     value="1" {{ $receiver->still_recieving ? 'checked' : '' }}>
                                 <label for="current_scholarship" class="ml-2 text-gray-700">Currently receiving scholarship</label>
                             </div>
-
-
 
                             <div class="flex items-center justify-between">
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>

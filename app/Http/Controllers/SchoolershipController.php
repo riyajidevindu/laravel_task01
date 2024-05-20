@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ScholershipReciever;
+use App\Models\Donor;
 use Illuminate\Http\Request;
 
 class SchoolershipController extends Controller
@@ -32,21 +33,25 @@ class SchoolershipController extends Controller
         return redirect(route('scholarshipRecieverList'));
     }
 
-    public function edit($receiver_id){
-        $receiver = ScholershipReciever::findOrFail($receiver_id);
-        return view('pages.edit',compact('receiver'));
-    }
+    public function edit($receiver_id)
+{
+    $receiver = ScholershipReciever::findOrFail($receiver_id);
+    $donors = Donor::all();
+    return view('pages.edit', compact('receiver', 'donors'));
+}
 
-    public function update(Request $request){
-        $reciver_id = $request->id;
+public function update(Request $request)
+{
+    $receiver_id = $request->id;
 
-        ScholershipReciever::findOrFail($reciver_id)->update([
-            'reciever_name' => $request->reciever_name,
-            'donor_name' => $request->donor_name,
-            'monthly_payment' => $request->monthly_payment,
-            'still_recieving' => $request->still_recieving,
-        ]);
+    ScholershipReciever::findOrFail($receiver_id)->update([
+        'reciever_name' => $request->reciever_name,
+        'donor_id' => $request->donor_id,
+        'monthly_payment' => $request->monthly_payment,
+        'still_recieving' => $request->still_recieving,
+    ]);
 
-        return redirect(route('scholarshipRecieverList'));
-    }
+    return redirect(route('scholarshipRecieverList'));
+}
+
 }
