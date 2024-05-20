@@ -14,5 +14,6 @@ class Donor extends Model
     public function scholarshipReceivers()
     {
         return $this->hasMany(ScholershipReciever::class);
+        
     }
 }
