@@ -46,17 +46,26 @@ class DonorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($donor_id)
     {
-        //
+        $donor = Donor::findOrFail($donor_id);
+        return view('pages.donor.editdonor',compact('donor'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $donor_id = $request->id;
+
+        Donor::findOrFail($donor_id)->update([
+            "name" => $request->name,
+            "country" => $request->country,
+            "age" => $request->age,
+        ]);
+
+        return redirect(route('donor.list'));
     }
 
 
@@ -65,5 +74,6 @@ class DonorController extends Controller
         $donor = $this->donor->find($donor_id);
         $donor->delete();
         return redirect(route('donor.list'));
+
     }
 }

@@ -37,7 +37,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/adddonor',[DonorController::class, "create"])->name("donor.addpage");
         Route::post('/store',[DonorController::class, "store"])->name("donor.store");
         Route::get('{donor_id}/delete',[DonorController::class, "destroy"])->name("donor.delete");
-
+        Route::get('/edit/{donor_id}',[DonorController::class, "edit"])->name("donor.edit");
+        Route::post('/update',[DonorController::class, "update"])->name("donor.update");
     });
 
 });
