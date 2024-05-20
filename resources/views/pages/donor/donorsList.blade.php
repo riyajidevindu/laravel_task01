@@ -18,6 +18,7 @@
                                     <th class="py-3 px-6 text-left">Donor Name</th>
                                     <th class="py-3 px-6 text-left">Donor Country</th>
                                     <th class="py-3 px-6 text-left">Age</th>
+                                    <th class="py-3 px-6 text-left">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-700">
@@ -30,10 +31,9 @@
                                     <td class="border px-6 py-4">
                                         <div class="flex space-x-4">
                                             <a href="{{ route('scholarshipReciever.edit', $donor->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Edit</a>
-                                            <a href="{{ route('scholarshipReciever.delete', $donor->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Delete</a>
+                                            <a href="{{ route('donor.delete', $donor->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Delete</a>
                                         </div>
                                     </td>
-
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -45,7 +45,7 @@
     </div>
 
 
-   
+
 
 
 </x-app-layout>

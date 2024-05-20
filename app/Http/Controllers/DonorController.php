@@ -59,11 +59,11 @@ class DonorController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+
+    public function destroy($donor_id)
     {
-        //
+        $donor = $this->donor->find($donor_id);
+        $donor->delete();
+        return redirect(route('donor.list'));
     }
 }
