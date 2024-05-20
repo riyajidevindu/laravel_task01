@@ -27,7 +27,7 @@
                 </div>
                 <!-- Navigation Links -->
                 <div class="flex-grow mt-10 space-y-2">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="block w-full px-4 py-2 text-center text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="block w-full px-4 py-2 text-center text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
                         {{ __('Home') }}
                     </x-nav-link>
                     <x-nav-link :href="route('scholarshipRecieverList')" :active="request()->routeIs('scholarshipRecieverList')" class="block w-full px-4 py-2 text-center text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">

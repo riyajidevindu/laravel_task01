@@ -34,24 +34,33 @@ class SchoolershipController extends Controller
     }
 
     public function edit($receiver_id)
-{
-    $receiver = ScholershipReciever::findOrFail($receiver_id);
-    $donors = Donor::all();
-    return view('pages.edit', compact('receiver', 'donors'));
-}
+    {
+        $receiver = ScholershipReciever::findOrFail($receiver_id);
+        $donors = Donor::all();
+        return view('pages.edit', compact('receiver', 'donors'));
+    }
 
-public function update(Request $request)
-{
-    $receiver_id = $request->id;
+    public function update(Request $request)
+    {
+        $receiver_id = $request->id;
 
-    ScholershipReciever::findOrFail($receiver_id)->update([
-        'reciever_name' => $request->reciever_name,
-        'donor_id' => $request->donor_id,
-        'monthly_payment' => $request->monthly_payment,
-        'still_recieving' => $request->still_recieving,
-    ]);
+        ScholershipReciever::findOrFail($receiver_id)->update([
+            'reciever_name' => $request->reciever_name,
+            'donor_id' => $request->donor_id,
+            'monthly_payment' => $request->monthly_payment,
+            'still_recieving' => $request->still_recieving,
+        ]);
 
-    return redirect(route('scholarshipRecieverList'));
-}
+        return redirect(route('scholarshipRecieverList'));
+    }
+
+    public function home()
+    {
+        $receiverCount = ScholershipReciever::count();
+        $donorCount = Donor::count();
+
+        return view('dashboard', compact('receiverCount', 'donorCount'));
+    }
+
 
 }

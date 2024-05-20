@@ -10,6 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -40,6 +41,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{donor_id}',[DonorController::class, "edit"])->name("donor.edit");
         Route::post('/update',[DonorController::class, "update"])->name("donor.update");
     });
+
+    //home controller
+    Route::get('/home', [SchoolershipController::class, 'home'])->name('home');
+
 
 });
 
