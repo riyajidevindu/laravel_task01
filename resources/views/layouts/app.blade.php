@@ -39,6 +39,9 @@
                     <x-nav-link :href="route('donor.list')" :active="request()->routeIs('donor.list')" class="block w-full px-4 py-2 text-center text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
                         {{ __('Donors') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('donor.addpage')" :active="request()->routeIs('donor.addpage')" class="block w-full px-4 py-2 text-center text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+                        {{ __('Add Donors') }}
+                    </x-nav-link>
                 </div>
             </div>
         </nav>

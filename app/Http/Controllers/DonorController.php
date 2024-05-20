@@ -23,20 +23,16 @@ class DonorController extends Controller
         return view("pages.donor.donorsList")->with($response);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view("pages.donor.adddonor");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+        $this->donor->create($request->all());
+        return redirect(route('donor.list'));
     }
 
     /**
