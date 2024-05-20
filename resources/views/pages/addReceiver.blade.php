@@ -10,16 +10,20 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100 ">
                     <div class="max-w-md mx-auto bg-white shadow-md rounded px-8 py-6">
-                        <h2 class="text-xl font-semibold mb-4  text-gray-800">Scholarship Application Form</h2>
-                        <form action="{{ route('addReceiver.store') }}" method="post" enctype="multipart/form">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800">Scholarship Application Form</h2>
+                        <form action="{{ route('addReceiver.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-4">
                                 <label for="receiver_name" class="block text-gray-700 text-sm font-bold mb-2">Receiver Name:</label>
                                 <input type="text" id="receiver_name" name="reciever_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter receiver's name">
                             </div>
                             <div class="mb-4">
-                                <label for="donor_name" class="block text-gray-700 text-sm font-bold mb-2">Donor Name:</label>
-                                <input type="text" id="donor_name" name="donor_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter donor's name">
+                                <label for="donor_id" class="block text-gray-700 text-sm font-bold mb-2">Donor Name:</label>
+                                <select id="donor_id" name="donor_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    @foreach($donors as $donor)
+                                        <option value="{{ $donor->id }}">{{ $donor->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-4">
                                 <label for="monthly_payment" class="block text-gray-700 text-sm font-bold mb-2">Monthly Payment:</label>
@@ -27,7 +31,6 @@
                                     <option value="100">$100</option>
                                     <option value="200">$200</option>
                                     <option value="300">$300</option>
-                                    <!-- Add more options as needed -->
                                 </select>
                             </div>
                             <div class="mb-4">

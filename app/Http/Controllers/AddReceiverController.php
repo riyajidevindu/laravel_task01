@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ScholershipReciever;
+use App\Models\Donor;
 use Illuminate\Http\Request;
 
 class AddReceiverController extends Controller
@@ -16,7 +17,9 @@ class AddReceiverController extends Controller
 
     public function addScholarshipReceiver()
     {
-        return view("pages.addReceiver");
+        $donors = Donor::all();
+
+        return view('pages.addReceiver', compact('donors'));
     }
 
     public function store(Request $request)

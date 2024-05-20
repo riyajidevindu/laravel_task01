@@ -11,7 +11,6 @@ class ScholershipReciever extends Model
 
     protected $fillable = [
         'reciever_name',
-        'donor_name',
         'monthly_payment',
         'still_recieving',
         'donor_id'
