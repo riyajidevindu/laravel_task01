@@ -19,12 +19,6 @@
         <!-- Vertical Navigation -->
         <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-r border-gray-100 dark:border-gray-700 fixed top-0 left-0 h-full w-64 z-10">
             <div class="flex flex-col h-full">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center justify-center h-16 border-b border-gray-100 dark:border-gray-700">
-                    <a href="{{ route('home') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                    </a>
-                </div>
                 <!-- Navigation Links -->
                 <div class="flex-grow mt-10 space-y-2">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="block w-full px-4 py-2 text-center text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
