@@ -122,7 +122,7 @@
                         </div>
                     </main>
 
-                    <footer class="bg-gray-900 text-white py-15 ml-10 mt-10">
+                    <footer class="bg-gray-900 text-white py-12 px-12 ml-10 mt-10 text-center">
                         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                 <div>
@@ -130,24 +130,14 @@
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                                    <ul class="text-gray-400 text-sm">
-                                        <li class="mb-2"><a href="#" class="hover:text-gray-200">Home</a></li>
-                                        <li class="mb-2"><a href="#" class="hover:text-gray-200">About</a></li>
-                                        <li class="mb-2"><a href="#" class="hover:text-gray-200">Scholarships</a></li>
-                                        <li class="mb-2"><a href="#" class="hover:text-gray-200">Contact</a></li>
-                                    </ul>
+
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-                                    <div class="flex space-x-4">
-                                        <a href="#" class="text-gray-400 hover:text-gray-200"><i class="fab fa-facebook fa-lg"></i></a>
-                                        <a href="#" class="text-gray-400 hover:text-gray-200"><i class="fab fa-twitter fa-lg"></i></a>
-                                        <a href="#" class="text-gray-400 hover:text-gray-200"><i class="fab fa-linkedin fa-lg"></i></a>
-                                        <a href="#" class="text-gray-400 hover:text-gray-200"><i class="fab fa-instagram fa-lg"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
-                            <div class="mt-8 border-t border-gray-700 pt-8">
+                            <div class="mt-8 border-t text-center border-gray-700 pt-8">
                                 <p class="text-gray-400 text-sm">&copy; 2024 Scholarship Foundation. All rights reserved.</p>
                                 <p class="text-gray-400 text-sm mt-2">Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</p>
                             </div>
