@@ -24,20 +24,19 @@
                             </thead>
                             <tbody class="text-gray-700">
                                 @foreach ($recivers as $key => $reciver)
-                                <tr>
-                                    <td class="border px-6 py-4">{{ $reciver->id+1000 }}</td>
-                                    <td class="border px-6 py-4">{{ $reciver->reciever_name }}</td>
-                                    <td class="border px-6 py-4">{{ $reciver->donor->name }}</td>
-                                    <td class="border px-6 py-4">{{ $reciver->monthly_payment }}</td>
-                                    <td class="border px-6 py-4">{{ $reciver->still_recieving ? 'Yes' : 'No' }}</td>
-                                    <td class="border px-6 py-4">
-                                        <div class="flex space-x-4">
-                                            <a href="{{ route('scholarshipReciever.edit', $reciver->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</a>
-                                            <a href="{{ route('scholarshipReciever.delete', $reciver->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Delete</a>
-                                        </div>
-                                    </td>
-
-                                </tr>
+                                    <tr>
+                                        <td class="border px-6 py-4">{{ $reciver->id + 1000 }}</td>
+                                        <td class="border px-6 py-4">{{ $reciver->reciever_name }}</td>
+                                        <td class="border px-6 py-4">{{ $reciver->donor ? $reciver->donor->name : 'Donor Not Defined' }}</td>
+                                        <td class="border px-6 py-4">{{ $reciver->monthly_payment }}</td>
+                                        <td class="border px-6 py-4">{{ $reciver->still_recieving ? 'Yes' : 'No' }}</td>
+                                        <td class="border px-6 py-4">
+                                            <div class="flex space-x-4">
+                                                <a href="{{ route('scholarshipReciever.edit', $reciver->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</a>
+                                                <a href="{{ route('scholarshipReciever.delete', $reciver->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Delete</a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -46,8 +45,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>
-
-
-

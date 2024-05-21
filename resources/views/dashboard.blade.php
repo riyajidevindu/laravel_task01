@@ -7,18 +7,26 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <div class="max-w-md mx-auto bg-white shadow-md rounded px-8 py-6">
-                        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-800 text-center">System Overview</h2>
-                        <div class="flex flex-col items-center space-y-4">
-                            <div class="bg-blue-100 dark:bg-blue-800 p-4 rounded-lg shadow w-full">
-                                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Scholarship Receivers</h3>
-                                <p class="text-2xl text-blue-700 dark:text-blue-300">{{ $receiverCount }}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Scholarship Receivers -->
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100 text-center">Scholarship Receivers</h2>
+                        <div class="flex items-center justify-center">
+                            <div class="flex items-center justify-center h-24 w-24 bg-blue-500 text-white font-bold text-4xl rounded-full shadow-lg">
+                                <span>{{ $receiverCount }}</span>
                             </div>
-                            <div class="bg-green-100 dark:bg-green-800 p-4 rounded-lg shadow w-full">
-                                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Donors</h3>
-                                <p class="text-2xl text-green-700 dark:text-green-300">{{ $donorCount }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donors -->
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100 text-center">Donors</h2>
+                        <div class="flex items-center justify-center">
+                            <div class="flex items-center justify-center h-24 w-24 bg-green-500 text-white font-bold text-4xl rounded-full shadow-lg">
+                                <span>{{ $donorCount }}</span>
                             </div>
                         </div>
                     </div>
