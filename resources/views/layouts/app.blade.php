@@ -21,7 +21,7 @@
             <div class="flex flex-col h-full">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center justify-center h-16 border-b border-gray-100 dark:border-gray-700">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
